@@ -4,7 +4,12 @@ server:
 spring:
   application:
    name: cmm-user
-
+   cloud:
+    consul:
+      host: localhost
+      port: 8848
+      discovery:
+        serviceName: cmm-user	# 注册到consul的服务名称
   datasource:
     username: root
     password: 1234
