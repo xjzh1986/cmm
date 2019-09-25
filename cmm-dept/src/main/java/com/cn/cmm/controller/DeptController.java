@@ -22,6 +22,14 @@ public class DeptController {
     @Autowired
     private DeptService deptService;
 
+    @ApiOperation(value = "index" ,  notes="index")
+    @RequestMapping(value="/index",method= RequestMethod.GET)
+    @ResponseBody
+    public String index(){
+
+        return "cmm-dept";
+    }
+
     @ApiOperation(value = "根据Id查询用户信息" ,  notes="根据Id查询用户信息")
     @RequestMapping(value="/selectById",method= RequestMethod.POST)
     @ResponseBody

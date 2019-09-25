@@ -28,6 +28,14 @@ public class UserController {
     @Autowired
     private IDeptService iDeptService;
 
+    @ApiOperation(value = "index" ,  notes="index")
+    @RequestMapping(value="/index",method= RequestMethod.GET)
+    @ResponseBody
+    public String index(){
+
+        return "cmm-user";
+    }
+
     @ApiOperation(value = "根据Id查询用户信息" ,  notes="根据Id查询用户信息")
     @RequestMapping(value="/selectById",method= RequestMethod.POST)
     @ResponseBody
