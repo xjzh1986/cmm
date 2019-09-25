@@ -7,7 +7,7 @@ spring:
    cloud:
     consul:
       host: localhost
-      port: 8500
+      port: 8848
       discovery:
         serviceName: cmm-user	# 注册到consul的服务名称
   datasource:
@@ -55,8 +55,9 @@ mybatis:
 logging:
   level:
     com:
-      example:
-        mapper : debug
+      cn:
+        cmm:
+          mapper : debug
 
 #pagehelper分页配置
 pagehelper:
