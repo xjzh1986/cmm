@@ -1,6 +1,7 @@
 package com.cn.cmm.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.cn.cmm.constants.SysConstant;
 import com.cn.cmm.entity.BaseResult;
 import com.cn.cmm.entity.Dept;
 import com.cn.cmm.service.DeptService;
@@ -35,7 +36,7 @@ public class DeptController {
     @ResponseBody
     public BaseResult selectById(@RequestBody Dept deptReq){
         Dept deptrRes = deptService.selectById(deptReq.getId());
-        BaseResult result = new BaseResult("200",deptrRes);
+        BaseResult result = new BaseResult(SysConstant.SUCCESS,deptrRes);
 
 //        for(int i=1;i<100;i++){
 //            Dept dept = new Dept();
@@ -50,7 +51,7 @@ public class DeptController {
     @ResponseBody
     public BaseResult selectAll(@RequestParam("page") int page, @RequestBody Dept dept){
         PageInfo<Dept> pageInfo = deptService.findAllUser(page,dept);
-        BaseResult result = new BaseResult("200",pageInfo);
+        BaseResult result = new BaseResult(SysConstant.SUCCESS,pageInfo);
         return result;
     }
 }
