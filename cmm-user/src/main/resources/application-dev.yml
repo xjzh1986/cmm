@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8081
 
 spring:
   application:
@@ -7,7 +7,7 @@ spring:
    cloud:
     consul:
       host: localhost
-      port: 8848
+      port: 8500
       discovery:
         serviceName: cmm-user	# 注册到consul的服务名称
   datasource:
