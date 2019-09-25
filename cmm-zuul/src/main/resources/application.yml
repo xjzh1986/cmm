@@ -1,0 +1,21 @@
+server:
+  port: 8541
+spring:
+  application:
+    name: cmm-zuul
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        serviceName: ${spring.application.name}	# 注册到consul的服务名称
+zuul:
+  routes:
+    user:
+      path: /user/**
+      serviceId: cmm-user  # 转发到消费者 /user/
+    dept:
+      path: /dept/**
+      serviceId: cmm-dept  # 转发到消费者 /dept/
+
+
