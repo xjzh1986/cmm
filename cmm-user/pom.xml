@@ -24,6 +24,11 @@
 			<artifactId>cmm-common</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>com.cn.cmm</groupId>
+			<artifactId>cmm-user-entity</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
