@@ -19,15 +19,16 @@
 	</properties>
 
 	<dependencies>
+		<!-- swagger -->
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<!--<version>2.5.0</version>-->
 		</dependency>
-
+		<!-- swagger-ui -->
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
 		</dependency>
 	</dependencies>
 
@@ -36,6 +37,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<classifier>exec</classifier>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

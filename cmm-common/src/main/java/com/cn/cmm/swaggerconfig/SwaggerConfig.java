@@ -1,4 +1,4 @@
-package com.cn.cmm.SwaggerConfig;
+package com.cn.cmm.swaggerconfig;
 
 import io.swagger.annotations.ApiOperation;
 import org.springframework.context.annotation.Bean;
@@ -16,6 +16,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class SwaggerConfig {
     @Bean
     public Docket swaggerSpringMvcPlugin() {
+        /**
+         * swagger 默认请求路径
+         * http://localhost:8080/swagger-ui.html
+         */
         return new Docket(DocumentationType.SWAGGER_2).select().apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class)).build();
     }
 }
