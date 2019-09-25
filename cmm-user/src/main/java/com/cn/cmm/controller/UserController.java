@@ -1,7 +1,9 @@
 package com.cn.cmm.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.cn.cmm.entity.Dept;
 import com.cn.cmm.entity.User;
+import com.cn.cmm.service.IDeptService;
 import com.cn.cmm.service.UserService;
 import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.ApiOperation;
@@ -22,10 +24,16 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private IDeptService iDeptService;
+
     @ApiOperation(value = "根据Id查询用户信息" ,  notes="根据Id查询用户信息")
     @RequestMapping(value="/selectById",method= RequestMethod.POST)
     @ResponseBody
     public User selectById(@RequestBody User userReq){
+        Dept dept = new Dept();
+        dept.setId(1);
+        Dept tt = iDeptService.selectById(dept);
         User userRes = userService.selectById(1);
         return userRes;
     }

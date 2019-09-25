@@ -20,6 +20,11 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
+		</dependency>
+
+		<dependency>
 			<groupId>com.cm.cmm</groupId>
 			<artifactId>cmm-common</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
@@ -27,6 +32,11 @@
 		<dependency>
 			<groupId>com.cn.cmm</groupId>
 			<artifactId>cmm-user-entity</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.cn.cmm</groupId>
+			<artifactId>cmm-dept-entity</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 

@@ -7,8 +7,8 @@
         <result column="dept_name" jdbcType="VARCHAR" property="deptName" />
     </resultMap>
 
-    <select id="selectById" resultType="com.cn.cmm.entity.Dept">
-        select * from dept where id = #{id}
+    <select id="selectById" resultMap="BaseResultMap">
+        select id,dept_name from dept where id = #{id}
     </select>
 
     <insert id="insert" parameterType="com.cn.cmm.entity.Dept">
