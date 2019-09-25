@@ -19,17 +19,12 @@
 	</properties>
 
 	<dependencies>
-        <!--&lt;!&ndash;健康检查依赖于此包&ndash;&gt;-->
-		<!--<dependency>-->
-			<!--<groupId>org.springframework.boot</groupId>-->
-			<!--<artifactId>spring-boot-starter-actuator</artifactId>-->
-		<!--</dependency>-->
-		<!--&lt;!&ndash;Spring Cloud Consul 的支持&ndash;&gt;-->
-		<!--<dependency>-->
-			<!--<groupId>org.springframework.cloud</groupId>-->
-			<!--<artifactId>spring-cloud-starter-consul-discovery</artifactId>-->
-			<!--&lt;!&ndash;<version>2.0.0.RELEASE</version>&ndash;&gt;-->
-		<!--</dependency>-->
+		<dependency>
+			<groupId>com.cm.cmm</groupId>
+			<artifactId>cmm-common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
 			<artifactId>mybatis-spring-boot-starter</artifactId>
