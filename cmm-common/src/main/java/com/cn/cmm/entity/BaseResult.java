@@ -5,22 +5,26 @@ import java.io.Serializable;
 /**
  *
  */
-public class BaseEntityRes implements Serializable {
+public class BaseResult implements Serializable {
     private String code;
     private String msg;
     private Object data;
 
-    public BaseEntityRes(String code,String msg,Object data){
+    public BaseResult(String code, String msg, Object data){
         this.code = code;
         this.msg = msg;
         this.data = data;
     }
 
-    public BaseEntityRes(String code,Object data){
+    public BaseResult(String code, Object data){
         this.code = code;
         this.data = data;
     }
-    public BaseEntityRes(String code){
+
+    public BaseResult(){
+
+    }
+    public BaseResult(String code){
         this.code = code;
     }
 

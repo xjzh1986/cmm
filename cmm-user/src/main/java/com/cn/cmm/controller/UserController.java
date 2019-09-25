@@ -1,6 +1,7 @@
 package com.cn.cmm.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.cn.cmm.entity.BaseResult;
 import com.cn.cmm.entity.Dept;
 import com.cn.cmm.entity.User;
 import com.cn.cmm.service.IDeptService;
@@ -33,7 +34,7 @@ public class UserController {
     public User selectById(@RequestBody User userReq){
         Dept dept = new Dept();
         dept.setId(1);
-        Dept tt = iDeptService.selectById(dept);
+        BaseResult deptResult = iDeptService.selectById(dept);
         User userRes = userService.selectById(1);
         return userRes;
     }

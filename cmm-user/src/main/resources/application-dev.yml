@@ -65,3 +65,8 @@ pagehelper:
     reasonable: true
     supportMethodsArguments: true
     params: count=countSql
+
+#开启熔断器
+feign:
+  hystrix:
+    enabled: true
