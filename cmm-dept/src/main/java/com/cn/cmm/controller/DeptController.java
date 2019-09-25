@@ -37,7 +37,7 @@ public class DeptController {
     @ApiOperation(value = "查询用户信息" ,  notes="查询用户信息")
     @RequestMapping(value="/selectAll",method= RequestMethod.POST)
     @ResponseBody
-    public PageInfo<Dept> selectAll(@RequestParam("page") int page,@RequestBody Dept dept){
+    public PageInfo<Dept> selectAll(@RequestParam("page") int page, @RequestBody Dept dept){
         PageInfo<Dept> pageInfo = deptService.findAllUser(page,dept);
         // 用户组对象转JSON串
         String jsonString = JSON.toJSONString(pageInfo);
