@@ -1,9 +1,6 @@
 package com.cn.cmm.service;
 
-
-
 import com.cn.cmm.entity.Dept;
-
 import com.cn.cmm.mapper.DeptMapper;
 
 import com.github.pagehelper.PageHelper;
