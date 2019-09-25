@@ -7,10 +7,7 @@ import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @Author:0xOO
@@ -27,7 +24,7 @@ public class UserController {
     @ApiOperation(value = "根据Id查询用户信息" ,  notes="根据Id查询用户信息")
     @RequestMapping(value="/selectById",method= RequestMethod.POST)
     @ResponseBody
-    public User selectById(User userReq){
+    public User selectById(@RequestBody User userReq){
         User userRes = userService.selectById(1);
         return userRes;
     }
@@ -35,7 +32,7 @@ public class UserController {
     @ApiOperation(value = "查询用户信息" ,  notes="查询用户信息")
     @RequestMapping(value="/selectAll",method= RequestMethod.POST)
     @ResponseBody
-    public PageInfo<User> selectAll(@RequestParam("page") int page, User user){
+    public PageInfo<User> selectAll(@RequestParam("page") int page, @RequestBody User user){
         PageInfo<User> pageInfo = userService.findAllUser(page,user);
         // 用户组对象转JSON串
         String jsonString = JSON.toJSONString(pageInfo);

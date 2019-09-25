@@ -7,10 +7,7 @@ import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @Author:0xOO
@@ -27,7 +24,7 @@ public class DeptController {
     @ApiOperation(value = "根据Id查询用户信息" ,  notes="根据Id查询用户信息")
     @RequestMapping(value="/selectById",method= RequestMethod.POST)
     @ResponseBody
-    public Dept selectById(Dept deptReq){
+    public Dept selectById(@RequestBody Dept deptReq){
         Dept deptrRes = deptService.selectById(deptReq.getId());
         for(int i=1;i<100;i++){
             Dept dept = new Dept();
@@ -40,7 +37,7 @@ public class DeptController {
     @ApiOperation(value = "查询用户信息" ,  notes="查询用户信息")
     @RequestMapping(value="/selectAll",method= RequestMethod.POST)
     @ResponseBody
-    public PageInfo<Dept> selectAll(@RequestParam("page") int page, Dept dept){
+    public PageInfo<Dept> selectAll(@RequestParam("page") int page,@RequestBody Dept dept){
         PageInfo<Dept> pageInfo = deptService.findAllUser(page,dept);
         // 用户组对象转JSON串
         String jsonString = JSON.toJSONString(pageInfo);

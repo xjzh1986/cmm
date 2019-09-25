@@ -1,4 +1,4 @@
-package com.cm.cmm;
+package com.cn.cmm;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
