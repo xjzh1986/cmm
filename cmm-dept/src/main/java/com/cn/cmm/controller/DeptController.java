@@ -36,6 +36,7 @@ public class DeptController {
     public BaseResult selectById(@RequestBody Dept deptReq){
         Dept deptrRes = deptService.selectById(deptReq.getId());
         BaseResult result = new BaseResult("200",deptrRes);
+
 //        for(int i=1;i<100;i++){
 //            Dept dept = new Dept();
 //            dept.setDeptName("dept"+i);
