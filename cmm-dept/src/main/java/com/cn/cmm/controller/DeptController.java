@@ -26,11 +26,11 @@ public class DeptController {
     @ResponseBody
     public Dept selectById(@RequestBody Dept deptReq){
         Dept deptrRes = deptService.selectById(deptReq.getId());
-        for(int i=1;i<100;i++){
-            Dept dept = new Dept();
-            dept.setDeptName("dept"+i);
-            deptService.insert(dept);
-        }
+//        for(int i=1;i<100;i++){
+//            Dept dept = new Dept();
+//            dept.setDeptName("dept"+i);
+//            deptService.insert(dept);
+//        }
         return deptrRes;
     }
 
