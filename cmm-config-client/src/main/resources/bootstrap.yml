@@ -7,6 +7,7 @@ spring:
           serviceName: cmm-config-client    # 注册到consul的服务名称
 
     config:
+      fail-fast: true
       discovery:
             enabled: true  # 开启服务发现
             serviceId: cmm-config-server # 配置中心服务名称
@@ -14,7 +15,11 @@ spring:
       profile: dev  # 对应{profile}部分
       label: master  # 对应git的分支，如果配置中心使用的是本地存储，则该参数无用
 
-
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
   #开放refresh的相关接口
   management:
