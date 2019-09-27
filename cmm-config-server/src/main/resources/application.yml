@@ -1,0 +1,19 @@
+server:
+  port: 8551
+spring:
+  application:
+    name: cmm-config-server
+  cloud:
+      consul:
+          host: localhost
+          port: 8500
+          discovery:
+            serviceName: cmm-config-server    # 注册到consul的服务名称
+      config:
+        server:
+          git:
+            uri: https://github.com/xjzh1986/cmm/                         # 配置git仓库的地址
+            search-paths: config-repository                              # git仓库地址下的相对地址，可以配置多个，用,分割。
+            username: xjzh1986                                           # git仓库的账号
+            password: jiuzhou123456                                      # git仓库的密码
+
