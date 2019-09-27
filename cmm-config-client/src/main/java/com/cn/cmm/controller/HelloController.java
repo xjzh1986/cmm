@@ -12,6 +12,20 @@ class HelloController {
     @Value("${spring.config.hello}")
     private String hello;
 
+    @Value("${spring.config.rabbitmq.host}")
+    private String rabbitmq_host;
+
+    @Value("${spring.config.rabbitmq.port}")
+    private String rabbitmq_port;
+
+    @Value("${spring.config.rabbitmq.username}")
+    private String rabbitmq_username;
+
+    @Value("${spring.config.rabbitmq.password}")
+    private String rabbitmq_password;
+
+
+
     @RequestMapping("/hello")
     public String hello() {
         return this.hello;
