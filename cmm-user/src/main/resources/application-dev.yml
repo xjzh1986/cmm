@@ -10,7 +10,8 @@ spring:
         port: 8500
         discovery:
           serviceName: cmm-user	# 注册到consul的服务名称
-
+  zipkin:
+      base-url: http://localhost:9411
   datasource:
     username: root
     password: 1234
