@@ -23,8 +23,6 @@
 		<module>cmm-config-server</module>
 		<module>cmm-txlcn-tm</module>
 
-
-
 		<module>cmm-user</module>
 		<module>cmm-user-entity</module>
 		<module>cmm-dept</module>
