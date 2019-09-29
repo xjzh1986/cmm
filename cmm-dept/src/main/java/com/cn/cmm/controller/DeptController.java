@@ -5,6 +5,7 @@ import com.cn.cmm.constants.SysConstant;
 import com.cn.cmm.entity.BaseResult;
 import com.cn.cmm.entity.Dept;
 import com.cn.cmm.service.DeptService;
+import com.codingapi.txlcn.tc.annotation.LcnTransaction;
 import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,6 +53,16 @@ public class DeptController {
     public BaseResult selectAll(@RequestParam("page") int page, @RequestBody Dept dept){
         PageInfo<Dept> pageInfo = deptService.findAllUser(page,dept);
         BaseResult result = new BaseResult(SysConstant.SUCCESS,pageInfo);
+        return result;
+    }
+
+
+    @ApiOperation(value = "查询用户信息" ,  notes="查询用户信息")
+    @RequestMapping(value="/insert",method= RequestMethod.POST)
+    @ResponseBody
+    public BaseResult insert(@RequestBody Dept dept){
+        deptService.insert(dept);
+        BaseResult result = new BaseResult(SysConstant.SUCCESS);
         return result;
     }
 }

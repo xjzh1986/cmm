@@ -2,11 +2,11 @@ package com.cn.cmm.service;
 
 import com.cn.cmm.entity.Dept;
 import com.cn.cmm.mapper.DeptMapper;
-
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -24,6 +24,7 @@ public class DeptService {
         return deptMapper.selectById(id);
     }
 
+    @Transactional //本地事务
     public void insert(Dept dept){
         deptMapper.insert(dept);
     }

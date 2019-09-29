@@ -16,4 +16,10 @@ public class IDeptHystrix implements IDeptService {
         BaseResult result = new BaseResult(SysConstant.EOORO_505);
         return result;
     }
+
+    @RequestMapping("/insert")
+    public BaseResult insert(Dept deptReq){
+        BaseResult result = new BaseResult(SysConstant.EOORO_505);
+        return result;
+    }
 }

@@ -12,4 +12,7 @@ public interface IDeptService {
 
     @RequestMapping("/selectById")
     public BaseResult selectById(Dept deptReq);
+
+    @RequestMapping("/insert")
+    public BaseResult insert(Dept deptReq);
 }

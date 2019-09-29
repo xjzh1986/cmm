@@ -49,6 +49,7 @@ spring:
            # 统计所有数据源状态
           use-global-data-source-stat: true
 
+
 mybatis:
   mapper-locations: classpath:mapping/*Mapper.xml
   type-aliases-package: com.cm.cmm.entity
@@ -60,6 +61,8 @@ logging:
       cn:
         cmm:
           mapper : debug
+          codingapi:
+             txlcn: DEBUG
 
 #pagehelper分页配置
 pagehelper:
@@ -72,3 +75,19 @@ pagehelper:
 feign:
   hystrix:
     enabled: true
+
+#txLcn 分布式事务
+tx-lcn:
+    client:
+        manager-address: localhost:8070
+    logger:
+        driver-class-name: ${spring.datasource.driver-class-name}
+        enabled: true
+        jdbc-url: ${spring.datasource.url}
+        password: ${spring.datasource.password}
+        username: ${spring.datasource.username}
+    ribbon:
+        loadbalancer:
+            dtx:
+                enabled: true
+

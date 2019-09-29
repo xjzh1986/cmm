@@ -2,10 +2,12 @@ package com.cn.cmm.service;
 
 
 
+import com.cn.cmm.entity.Dept;
 import com.cn.cmm.entity.Role;
 import com.cn.cmm.entity.User;
 import com.cn.cmm.mapper.RoleMapper;
 import com.cn.cmm.mapper.UserMapper;
+import com.codingapi.txlcn.tc.annotation.LcnTransaction;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,12 +29,20 @@ public class UserService {
     @Autowired
     RoleMapper roleMapper;
 
-    @Transactional(rollbackFor = Exception.class)
+    @Autowired
+    private IDeptService iDeptService;
+
+    @LcnTransaction//分布式事务
+    @Transactional //本地事务
     public User selectById(int id){
+
         Role role = new Role();
-        role.setRole_name("roleX");
+        role.setRole_name("roleTx-lcn-1");
         roleMapper.insert(role);
-        int i = 10/0;
+        Dept deptReq = new Dept();
+        deptReq.setDeptName("deptTx-lcn-1");
+        iDeptService.insert(deptReq);
+
         return userMapper.selectById(id);
     }
 

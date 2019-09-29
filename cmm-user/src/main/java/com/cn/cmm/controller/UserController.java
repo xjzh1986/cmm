@@ -40,9 +40,9 @@ public class UserController {
     @RequestMapping(value="/selectById",method= RequestMethod.POST)
     @ResponseBody
     public User selectById(@RequestBody User userReq){
-        Dept dept = new Dept();
-        dept.setId(1);
-        BaseResult deptResult = iDeptService.selectById(dept);
+//        Dept dept = new Dept();
+//        dept.setId(1);
+//        BaseResult deptResult = iDeptService.selectById(dept);
         User userRes = userService.selectById(1);
         return userRes;
     }
