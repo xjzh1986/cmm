@@ -1,4 +1,4 @@
-package com.cn.cmm.Utils;
+package com.cn.cmm.utils;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;
@@ -9,7 +9,6 @@ import org.apache.tomcat.util.codec.binary.Base64;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Map;
 
 /**

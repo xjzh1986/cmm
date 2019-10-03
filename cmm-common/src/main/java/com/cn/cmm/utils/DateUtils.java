@@ -1,4 +1,4 @@
-package com.cn.cmm.Utils;
+package com.cn.cmm.utils;
 
 import org.apache.commons.lang.StringUtils;
 
