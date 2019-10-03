@@ -48,7 +48,17 @@ spring:
           connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
            # 统计所有数据源状态
           use-global-data-source-stat: true
-
+  redis:
+          database: 0
+          host: localhost
+          password:
+          pool:
+              max-active: 200
+              max-idle: 10
+              max-wait: -1
+              min-idle: 0
+          port: 6379
+          timeout: 1000
 
 mybatis:
   mapper-locations: classpath:mapping/*Mapper.xml
